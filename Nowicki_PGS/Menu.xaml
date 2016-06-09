@@ -1,0 +1,17 @@
+﻿<Window x:Class="Nowicki_PGS.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nowicki_PGS"
+        mc:Ignorable="d"
+        Title="Menu" Height="300" Width="310">
+    <Grid>
+        <Button x:Name="button1" Content="Dodaj" HorizontalAlignment="Left" Margin="118,147,0,0" VerticalAlignment="Top" Width="70" Click="dodaj_Click"/>
+        <Button x:Name="button2" Content="Wyjdz" HorizontalAlignment="Left" Margin="118,189,0,0" VerticalAlignment="Top" Width="70" Click="exit_Click"/>
+        <Label x:Name="label" Content="Panel zarzadzania" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Impact" RenderTransformOrigin="0.394,2.003" Background="{x:Null}" Foreground="#FF5F0404" FontWeight="Medium"/>
+        <Label x:Name="label1" Content="" Margin="0,57,0,0" VerticalAlignment="Top" Width="302" HorizontalAlignment="Left" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="button" Content="Zarzadzaj" HorizontalAlignment="Left" Margin="118,105,0,0" VerticalAlignment="Top" Width="70" Click="startF_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,65 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nowicki_PGS"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Nowicki_PGS.Window1"
+        mc:Ignorable="d"
+        Title="Window1" Height="350" Width="535">
+    <Grid>
+
+        <xctk:Wizard  HorizontalAlignment="Left" VerticalAlignment="Top" Height="310" Width="520" HelpButtonVisibility="Collapsed" >
+            <xctk:WizardPage x:Name="pierwsza" Title="Formularz"  Description="Witam. Dodaj nowego pracownika. Proszę o rzetelne wypełnienie wszystkich pól." Margin="0,0,0,0" IsVisibleChanged="czyTekst2">
+
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="strona_imie" CanSelectNextPage="False" Title="Etap 1" Description="W wolnym polu, prosze o podanie swojego imienia." >
+                <Grid>
+                    <TextBlock Text="Podaj swoje imię:"/>
+                    <TextBox x:Name="imie"  HorizontalAlignment="Left" Height="23" Margin="0,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="czyTekst" Text=""/>
+                </Grid>
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="strona_nazw" Title="Etap 2" Description="W wolnym polu, prosze o podanie swojego nazwiska.">
+                <Grid>
+                    <TextBlock Text="Podaj swoje nazwisko:"/>
+                    <TextBox x:Name="nazw" HorizontalAlignment="Left" Height="23" Margin="0,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="czyTekst"/>
+                </Grid>
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="strona_addr" Title="Etap 3" Description="W wolnym polu, prosze o podanie swojego adresu.">
+                <Grid>
+                    <TextBlock Text="Podaj swoj adres:"/>
+                    <TextBox x:Name="addr" HorizontalAlignment="Left" Height="23" Margin="0,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="czyTekst"/>
+                </Grid>
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="strona_tel" Title="Etap 4"  Description="W wolnym polu, prosze o podanie swojego nr telefonu." CanSelectNextPage="False">
+                <Grid>
+                    <TextBlock Text="Podaj swoj telefon:"/>
+                    <TextBox x:Name="tel" HorizontalAlignment="Left" Height="23" Margin="0,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" TextChanged="czyTekst"/>
+                    <TextBlock Text="Aby zapisać dane wciśnij przycisk 'Zapisz' a następnie 'Next', aby wyświetlić informacje." HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" Padding="0,50,0,0"/>
+                    <Button x:Name="zapisz" Content="Zapisz" Click="wykonaj" HorizontalAlignment="Center" Height="23" Margin="0,120,0,0" Width="50" IsEnabled="False"/>
+                </Grid>
+            </xctk:WizardPage>
+
+            <xctk:WizardPage x:Name="strona_ost" Title="Wynik końcowy" Description="Aby dodać kolejną osobę kliknij 'Next'." NextPage="{Binding ElementName=pierwsza}" BackButtonVisibility="Collapsed" CanFinish="True">
+                <Grid>
+                    <ListView x:Name="ListView1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding Imie}" />
+                                <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Nazwisko}" />
+                                <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding Adres}"/>
+                                <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </xctk:WizardPage>
+        </xctk:Wizard>
+
+    </Grid>
+</Window>
+
