@@ -12,3 +12,7 @@ Instrukcja:
 
 -Dodaj: formularz na bazie wizzarda dodający nową osobe do listy, wprowadzono zabezpieczenia: aktywyny przycisk po wpisaniu wartosci, mozliwosc powrotu.
 
+-projekt połączyłem z laboratoriami na uczelni
+
+-zdjęcia wyswietlane z linków (potrzeby internet do prawidlowego dzialania programu)
+
